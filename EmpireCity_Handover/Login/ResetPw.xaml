@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EmpireCity_Handover.Features.Page1"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms">
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2.1*"/>
+                <RowDefinition Height="1.2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2.5*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <BoxView BackgroundColor="#1C384B"/>
+            <Image 
+                Grid.Row="0" Source="https://doclinks.blob.core.windows.net/0303430876/documents/EC_Logo_CMYK_Horizontal%20(1)_PTT_20200228152828.png"
+                HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="150"/>
+            <ImageButton 
+                Grid.Row="1" 
+                Source="https://doclinks.blob.core.windows.net/0303430876/documents/Previous-128_PTT_20200305141256.png" 
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                Command="{Binding Converter={StaticResource UrlCommand}, ConverterParameter='SPC.Dashboard?Code=SIGNIN'}"
+                BackgroundColor="White"/>
+            <Label  
+                Grid.Row="1" Text="#_Translate('ResetPassword')_#" 
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" TextColor="Black" 
+                FontAttributes="Bold" FontSize="Subtitle"/>
+            <BoxView 
+                Grid.Row="1" Color="#969FAA" HeightRequest="0.5" VerticalOptions="End"/>
+            <Label 
+                Grid.Row="3" Margin="20" 
+                Text="#_Translate('Pleaseenteryouremailtoresetpassword')_#" LineBreakMode="WordWrap"
+                TextColor="#47525E" 
+                VerticalOptions="Center" HorizontalOptions="Center" 
+                FontSize="Medium" HorizontalTextAlignment="Center"/>
+            <Entry 
+                Margin="10,0,10,0" Grid.Row="4" 
+                Placeholder="empirecity@empirecity.vn" Keyboard="Email" HorizontalTextAlignment="Center"/>
+            <buttons:SfButton 
+                HasShadow="False"
+                VerticalOptions="Center"
+                Grid.Row="6"
+                Margin="50,0,50,0"              
+                Text="#_Translate('SubmitEmail')_#"  
+                FontAttributes="Bold"
+                BackgroundColor="#1C384B" 
+                TextColor="White"
+                CornerRadius="10">
+            </buttons:SfButton>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EmpireCity_Handover.Login.Page1">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#1C384B" Spacing="30">
+            <BoxView BackgroundColor="#1C384B" HeightRequest="30"/>
+            <Image Source="https://doclinks.blob.core.windows.net/0303430876/documents/EC_Logo_CMYK_Stacked2a_PTT_20200228152832.png" 
+                   HeightRequest="120" 
+                   VerticalOptions="Start"/>
+            <Image Source="https://doclinks.blob.core.windows.net/0303430876/documents/kisspng-calligraphy-logo-font-welcome-5abe8eef94dbd6.4820659015224378716097_PTT_20200217114124.png" 
+                   HeightRequest="150" 
+                   VerticalOptions="Center"/>
+            <Button Text="Sign In" 
+                    TextColor="White" WidthRequest="250" BackgroundColor="#1C384B" 
+                    BorderRadius="10" 
+                    BorderWidth="2"
+                    BorderColor="#00AFBC" 
+                    HorizontalOptions="Center" 
+                    Command="{Binding Converter={StaticResource UrlCommand}, ConverterParameter='SPC.Dashboard?Code=SIGNIN'}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

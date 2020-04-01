@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EmpireCity_Handover.Features.Page1"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms">
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2.1*"/>
+                <RowDefinition Height="1.2*"/>
+                <RowDefinition Height="4.6*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <BoxView 
+                BackgroundColor="#1C384B"/>
+            <Image 
+                Grid.Row="0" Source="https://doclinks.blob.core.windows.net/0303430876/documents/EC_Logo_CMYK_Horizontal%20(1)_PTT_20200228152828.png"
+                HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="150"/>
+            <ImageButton 
+                Grid.Row="1" 
+                Source="https://doclinks.blob.core.windows.net/0303430876/documents/Previous-128_PTT_20200305141256.png" 
+                VerticalOptions="Center" HorizontalOptions="Start"
+                Command="{Binding Converter={StaticResource UrlCommand}, ConverterParameter='SPC.Dashboard?Code=SIGNIN'}"
+                BackgroundColor="White"/>
+            <Label  
+                Grid.Row="1" Text="#_Translate('UserProfile')_#" 
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" TextColor="Black" 
+                FontAttributes="Bold" FontSize="Subtitle"/>
+            <BoxView 
+                Grid.Row="1" Color="#969FAA" 
+                HeightRequest="0.5" VerticalOptions="End"/>
+            <Image 
+                BackgroundColor="Gray" Grid.Row="2" 
+                Source="https://doclinks.blob.core.windows.net/0303430876/documents/EC_Logo_CMYK_Horizontal%20(1)_PTT_20200228152828.png"/>
+            <Label 
+                Margin="20,0,20,0" Grid.Row="3"  
+                Text="#_Translate('AccountInformation')_#"
+                TextColor="#47525E" FontAttributes="Bold" FontSize="Medium"
+                VerticalTextAlignment="End"/>
+            <Label 
+                Margin="20,0,20,0" Grid.Row="4" 
+                Text="#_Translate('UserCode')_#" HorizontalOptions="Start" 
+                TextColor="#8190A5"
+                VerticalTextAlignment="End"/>
+            <Label 
+                Margin="20,0,20,0" Grid.Row="4" 
+                Text="phan-thanh.thuan@spc-technology.com" HorizontalOptions="End" 
+                TextColor="#8190A5"
+                VerticalTextAlignment="End"/>
+            <Label 
+                Margin="20,0,20,0" Grid.Row="5" Text="#_Translate('UserFullName')_#" HorizontalOptions="Start" 
+                TextColor="#8190A5"
+                VerticalTextAlignment="End"/>
+            <Label 
+                Margin="20,0,20,0" Grid.Row="5" Text="Phan Thi Thanh Thuan" HorizontalOptions="End" 
+                TextColor="#8190A5"
+                VerticalTextAlignment="End"/>
+            <Label 
+                Margin="20,0,20,0" Grid.Row="6" Text="#_Translate('UserPhone')_#" 
+                HorizontalOptions="Start" 
+                TextColor="#8190A5"
+                VerticalTextAlignment="End"/>
+            <Label 
+                Margin="20,0,20,0" Grid.Row="6" Text="0938689438" 
+                HorizontalOptions="End"
+                TextColor="#8190A5"
+                VerticalTextAlignment="End"/>
+            <BoxView 
+                Grid.Row="7" BackgroundColor="#969FAA" 
+                HeightRequest="0.5" VerticalOptions="End"/>
+            <Label 
+                Margin="20,0,20,0" Grid.Row="8"  Text="#_Translate('UserLanguage')_#" 
+                TextColor="#47525E" FontAttributes="Bold" FontSize="Medium"
+                VerticalTextAlignment="End"/>
+            <buttons:SfButton 
+                Grid.Row="9" Text="#_Translate('LanguageIsVietnamese')_#" WidthRequest="110" 
+                HorizontalOptions="End" 
+                CornerRadius="10" 
+                FontAttributes="Bold"
+                BackgroundColor="#1C384B"  
+                VerticalOptions="Center"/>
+            <buttons:SfButton
+                Margin="20,0,20,0"
+                Grid.Row="9" Text="#_Translate('LanguageIsEnglish')_#" 
+                WidthRequest="110" HorizontalOptions="Center" 
+                CornerRadius="10"
+                FontAttributes="Bold"
+                BackgroundColor="#1C384B"  
+                VerticalOptions="Center" />
+            <BoxView Grid.Row="10" BackgroundColor="#969FAA" HeightRequest="0.5" VerticalOptions="End"/>
+            <buttons:SfButton 
+                HasShadow="False"
+                Grid.Row="11" 
+                Text="#_Translate('ChangeMobilePassword')_#" ImageAlignment="Right" 
+                HorizontalTextAlignment="Start"
+                BackgroundColor="White" 
+                FontSize="Medium"
+                TextColor="#47525E"
+                FontAttributes="Bold" 
+                ImageSource="https://doclinks.blob.core.windows.net/0303430876/documents/Arrowhead-Right-01-128_PTT_20200228202411.png"
+                ShowIcon="True"/>
+            <BoxView 
+                Grid.Row="11" BackgroundColor="#969FAA" 
+                HeightRequest="0.5" 
+                VerticalOptions="End"/>
+            <buttons:SfButton 
+                HasShadow="False"
+                Grid.Row="12" 
+                Text="#_Translate('MobileLogOut')_#" ImageAlignment="Right" 
+                TextColor="#47525E"
+                FontAttributes="Bold" 
+                HorizontalTextAlignment="Start"
+                BackgroundColor="White" 
+                FontSize="Medium"
+                ImageSource="https://doclinks.blob.core.windows.net/0303430876/documents/Arrowhead-Right-01-128_PTT_20200228202411.png"
+                ShowIcon="True"/>
+            <BoxView 
+                Grid.Row="12" BackgroundColor="#969FAA" 
+                HeightRequest="0.5" VerticalOptions="End"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

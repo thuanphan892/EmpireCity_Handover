@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EmpireCity_Handover.Features.Page1"
+               xmlns:ce="clr-namespace:SPC.Views.BaseView.CustomEditors"
+               xmlns:ct="clr-namespace:SPC.Views.BaseView.Containers">
+    <ContentView.Content>
+        <ScrollView Orientation="Vertical">
+            <StackLayout Margin="5">
+                <ce:KeyDataEditor DataName="ReportNo" />
+                <ce:DataEditor DataName="HasFolowup" />
+                <ce:DataEditor DataName="FollowupFrom" />
+                <ct:SExpander HeaderText="Status">
+                    <ct:SExpander.Content>
+                        <StackLayout>
+                            <BoxView HeightRequest="0.5" BackgroundColor="Gray"></BoxView>
+                            <ce:DataEditor DataName="Status" />
+                        </StackLayout>
+                    </ct:SExpander.Content>
+                </ct:SExpander>
+                <ct:SExpander HeaderText="General">
+                    <ct:SExpander.Content>
+                        <StackLayout>
+                            <BoxView HeightRequest="0.5" BackgroundColor="Gray"></BoxView>
+                            <ce:DataEditor DataName="WorkType" LookupUrl="EWT" />
+                        </StackLayout>
+                    </ct:SExpander.Content>
+                </ct:SExpander>
+                <ce:DataEditor DataName="Descriptn" />
+                <ce:DataEditor DataName="EquNo" LookupUrl="EQU" />
+                <ce:DataEditor DataName="Location" LookupUrl="pbs.BO.EAM.LOC" />
+                <ct:SExpander HeaderText="Failure Report">
+                    <ct:SExpander.Content>
+                        <StackLayout>
+                            <BoxView HeightRequest="0.5" BackgroundColor="Gray"></BoxView>
+                            <ce:DataEditor DataName="FailDate" LookupUrl="Calendar" />
+                            <ce:MemoEdit DataName="Observation" />
+                            <ce:DataEditor DataName="ReportedBy" LookupUrl="EMP" />
+                            <ce:DataEditor DataName="ReportedDate" LookupUrl="Calendar" />
+                            <ce:DataEditor DataName="ReportedTime" LookupUrl="Hour" />
+                        </StackLayout>
+                    </ct:SExpander.Content>
+                </ct:SExpander>
+                <ce:DataEditor DataName="Updated" LookupUrl="Calendar" />
+                <ce:DataEditor DataName="UpdatedBy" />
+                <ce:DataEditor DataName="CtrNo" LookupUrl="pbs.BO.RE.CTR" />
+                <ce:DataEditor DataName="WoPriority" />
+                <ce:DataEditor DataName="Supervisor" LookupUrl="EMP" />
+                <ce:DataEditor DataName="Inspector" LookupUrl="EMP" />
+                <ct:SExpander HeaderText="Analysis">
+                    <ct:SExpander.Content>
+                        <StackLayout>
+                            <BoxView HeightRequest="0.5" BackgroundColor="Gray"></BoxView>
+                            <ce:DataEditor DataName="NcWo0" LookupUrl="NcWo0" />
+                            <ce:DataEditor DataName="NcWo1" LookupUrl="NcWo1" />
+                            <ce:DataEditor DataName="NcWo2" LookupUrl="NcWo2" />
+                            <ce:DataEditor DataName="NcWo3" LookupUrl="NcWo3" />
+                            <ce:DataEditor DataName="NcWo4" LookupUrl="NcWo4" />
+                            <ce:DataEditor DataName="NcWo5" LookupUrl="NcWo5" />
+                            <ce:DataEditor DataName="NcWo6" LookupUrl="NcWo6" />
+                            <ce:DataEditor DataName="NcWo7" LookupUrl="NcWo7" />
+                            <ce:DataEditor DataName="NcWo8" LookupUrl="NcWo8" />
+                            <ce:DataEditor DataName="NcWo9" LookupUrl="NcWo9" />
+                        </StackLayout>
+                    </ct:SExpander.Content>
+                </ct:SExpander>
+            </StackLayout>
+        </ScrollView>
+    </ContentView.Content>
+    </ContentView>

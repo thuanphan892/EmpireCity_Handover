@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EmpireCity_Handover.Login.Page2"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="0.6*"/>
+                    <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+                <Image Source="https://doclinks.blob.core.windows.net/0303430876/documents/EC_Logo_CMYK_Stacked1a_PTT_20200304132709.png" 
+                       Grid.Row="0"
+                       VerticalOptions="Center" 
+                       HeightRequest="120" 
+                       HorizontalOptions="Center"/>
+                <StackLayout Spacing="10" Grid.Row="1">
+                    <Entry Placeholder="#_Translate('EnterUserName')_#" 
+                       VerticalOptions="Start"  
+                       Margin="20,0,20,0" Keyboard="Email" />
+                    <Entry 
+                        Placeholder="#_Translate('EnterYourPassword')_#"                 
+                        VerticalOptions="Start" IsPassword="True"                 
+                        Margin="20,0,20,0"/>
+                    <buttons:SfButton 
+                        Text="#_Translate('ButtonSignIn')_#" 
+                        BackgroundColor="#1C384B" TextColor="White"
+                        Margin="20,0,20,0" CornerRadius="10" FontSize="Medium"
+                        VerticalOptions="Start"/>
+                    <buttons:SfButton
+                        BackgroundColor="White"
+                        HasShadow="False"
+                        Text="#_Translate('ButtonReSetPassword')_#"
+                        TextColor="#969FAA"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start" />
+                </StackLayout>
+                <Grid Grid.Row="2" VerticalOptions="Start">
+                    <Grid.ColumnDefinitions></Grid.ColumnDefinitions>
+                        <buttons:SfButton 
+                                          Text="#_Translate('LanguageIsVietnamese')_#" 
+                                          TextColor="#969FAA" BackgroundColor="White" 
+                                          VerticalOptions="Start" />
+                        <buttons:SfButton 
+                                          Grid.Column="1" 
+                                          Text="#_Translate('LanguageIsEnglish')_#" 
+                                          TextColor="#00afbc" BackgroundColor="white" 
+                                          VerticalOptions="Start"/>
+                    </Grid>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EmpireCity_Handover.Features.Page1"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:ce="clr-namespace:SPC.Views.BaseView.CustomEditors"
+             xmlns:ct="clr-namespace:SPC.Views.BaseView.Containers">
+    <ContentView.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2.1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="6.7*"/>
+            </Grid.RowDefinitions>
+            <BoxView 
+                BackgroundColor="#1C384B"/>
+            <ImageButton 
+                Grid.Row="0" 
+                Source="https://doclinks.blob.core.windows.net/0303430876/documents/Left-Arrow-128_PTT_20200305172701.png" 
+                VerticalOptions="Center" HorizontalOptions="Start"
+                Command="{Binding Converter={StaticResource UrlCommand}, ConverterParameter='SPC.Dashboard?Code=E_APARTLIST'}"
+                BackgroundColor="#1C384B"/>
+            <Label
+                Grid.Row="0" Text="#_Translate('BuyerInformation')_#" 
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                TextColor="White"  
+                FontAttributes="Bold" 
+                FontSize="Subtitle"/>
+            <Image 
+                BackgroundColor="Gray" Grid.Row="1" 
+                Source="#_Image(https://doclinks.blob.core.windows.net/media0000000000/IMAGE/[CustomerCode].jpg)_#"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"/>
+            <ScrollView Orientation="Vertical" Grid.Row="2">
+                <StackLayout Margin="5">
+                    <StackLayout>
+                        <ce:DataEditor DataName="Name" />
+                        <ce:DataEditor DataName="Gender" LookupUrl="GENDER" Display="Descriptn" />
+                        <ce:DataEditor DataName="EstablishmentDate" LookupUrl="Calendar" />
+                        <ce:DataEditor DataName="AnalC4" LookupUrl="COUNTRY" Display="Descriptn" />
+                        <ce:DataEditor DataName="Telephone" />
+                        <ce:DataEditor DataName="ExtDesc1" />
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

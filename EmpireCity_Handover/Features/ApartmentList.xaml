@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EmpireCity_Handover.Features.Page1"
+             xmlns:ce="clr-namespace:SPC.Views.BaseView.CustomEditors"
+             xmlns:ct="clr-namespace:SPC.Views.BaseView.Containers"
+             xmlns:db="clr-namespace:SPC.Views.Dashboard"
+             xmlns:con="clr-namespace:SPC.Views.BaseView.Containers" 
+             xmlns:pullToRefresh="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             Padding="{OnPlatform 0,iOS=0,Android=0}">
+    <ContentPage.Content>
+        <Grid RowSpacing="0" BackgroundColor="#1C384B">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="9.5*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+            <BoxView Grid.Row="0" BackgroundColor="#1C384B"/>
+            <ImageButton Grid.Row="0"
+                         Source="https://doclinks.blob.core.windows.net/0303430876/documents/Row-128_PTT_20200325095212.png"
+                         VerticalOptions="Center" 
+                         HorizontalOptions="Start"
+                         Command="{Binding Converter={StaticResource UrlCommand}, ConverterParameter='SPC.Dashboard?Code=USERPROFILE'}"
+                         Margin="10,0,0,0"
+                         BackgroundColor="#1C384B"
+                         CornerRadius="30"/>
+                        
+            <Image 
+                Grid.Row="0" 
+                Source="https://doclinks.blob.core.windows.net/0303430876/documents/EC_Logo_CMYK_Horizontal%20(1)_PTT_20200228152828.png"
+                HorizontalOptions="Center" 
+                VerticalOptions="Center" 
+                WidthRequest="150"/>
+            <ImageButton Grid.Row="0"
+                         Source="https://doclinks.blob.core.windows.net/0303430876/documents/Bell-128_PTT_20200325090552.png"
+                         VerticalOptions="Center" 
+                         HorizontalOptions="End"
+                         Command="{Binding Converter={StaticResource UrlCommand}, ConverterParameter='SPC.Dashboard?Code=NOTIFICATION'}"
+                         Margin="0,0,10,0"
+                         BackgroundColor="#1C384B"
+                         CornerRadius="30"
+                         HeightRequest="40"/>
+            <BoxView Grid.Row="1"
+                     VerticalOptions="FillAndExpand"
+                     BackgroundColor="White"
+                     CornerRadius="30,30,0,0"/>
+            <Label 
+                Grid.Row="1" Text="#_Translate('ApartmentList')_#" 
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" TextColor="Black" 
+                FontAttributes="Bold" FontSize="Subtitle"/>
+            <BoxView Grid.Row="1"
+                     HeightRequest="0.5"
+                     Color="#969FAA"
+                     VerticalOptions="End"/>
+            <BoxView BackgroundColor="White"
+                     Grid.Row="2"
+                     CornerRadius="0,0,30,30"/>
+           
+                <Grid Grid.Row="2" VerticalOptions="Start">
+                <db:SListGadget x:Name="LTask" DataUrl="SPC.BO.RE.HOCHK">
+                        <db:SListGadget.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <StackLayout Spacing="0,20">
+                                            <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Converter={StaticResource UrlCommand}, ConverterParameter='SPC.Dashboard?Code=CHECKLIST'}" />
+                                            </StackLayout.GestureRecognizers>
+                                            <Frame Padding="4,0" HasShadow="True" CornerRadius="10">
+                                                <Grid Padding="0,5" ColumnSpacing="0" RowSpacing="0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="2.7*"/>
+                                                        <ColumnDefinition Width="0.3*" />
+                                                    </Grid.ColumnDefinitions>
+                                                <Image Source="#_Image(https://doclinks.blob.core.windows.net/phoebusshare/documents/[PropertyCode]_ADM_20200324163214.png)_#"
+                                                       Grid.Column="0"
+                                                       VerticalOptions="Center"
+                                                       HeightRequest="50" />
+                                                <StackLayout Spacing="5" Grid.Column="1">
+                                                    <Label>
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="#_Translate('MobileUnit')_#" TextColor="#343F4B" FontSize="Subtitle" FontAttributes="Bold"/>
+                                                                <Span Text=" "/>
+                                                                <Span Text="#_PropertyCode_#" TextColor="#343F4B" FontSize="Subtitle" FontAttributes="Bold" />
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                    <Label>
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="#_Translate('HandoverStatus')_#" TextColor="#969FAA"/>
+                                                                <Span Text=" "/>
+                                                                <Span Text="#_Status_#" TextColor="#969FAA" FontAttributes="Bold" />
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                    <Label>
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="#_Translate('MobileHandoverDate')_#" TextColor="#00AFBC" />
+                                                                <Span Text=" "/>
+                                                                <Span Text="#_ScheduledDate_#" TextColor="#00AFBC" FontAttributes="Bold" />
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                    <Grid ColumnSpacing="0" RowSpacing="0">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="*" />
+                                                            <ColumnDefinition Width="*"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <buttons:SfButton 
+                                                            Grid.Column="0" Grid.Row="0"
+                                                            Text="#_Translate('ComfirmHandoverSchedule')_#" 
+                                                            CornerRadius="10"
+                                                            BackgroundColor="#1C384B"  
+                                                            HorizontalOptions="Start"
+                                                            VerticalOptions="Start"
+                                                            FontSize="Micro"
+                                                            WidthRequest="100" 
+                                                            
+                                                            Command="{Binding Converter={StaticResource UrlCommand}, ConverterParameter='SPC.Dashboard?Code=CONFIRMSCHEDULE'}"/>
+                                                    
+                                                        <buttons:SfButton 
+                                                            Grid.Column="1" Grid.Row="0"
+                                                            Text="#_Translate('RescheduleHandover')_#" 
+                                                            CornerRadius="10"
+                                                            BackgroundColor="#1C384B"  
+                                                            HorizontalOptions="Start"
+                                                            FontSize="Micro"
+                                                            VerticalOptions="Start"
+                                                            WidthRequest="100" 
+                                                            Command="{Binding Converter={StaticResource UrlCommand}, ConverterParameter='SPC.Dashboard?Code=RESCHEDULE'}"/>
+                                                    </Grid>
+                                                </StackLayout>
+                                                <ImageButton Grid.Column="2"
+                                                             Source="https://doclinks.blob.core.windows.net/0303430876/documents/Arrowhead-Right-01-128_PTT_20200228202411.png"
+                                                             BackgroundColor="White" HeightRequest="20"/>
+                                            </Grid>
+                                            </Frame>
+                                        </StackLayout>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </db:SListGadget.ItemTemplate>
+                    </db:SListGadget>
+                </Grid>
+            <BoxView Grid.Row="3"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

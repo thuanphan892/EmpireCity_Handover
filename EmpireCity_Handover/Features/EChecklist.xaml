@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:db="clr-namespace:SPC.Views.Dashboard"
+    xmlns:ct="clr-namespace:SPC.Views.BaseView.Containers"
+xmlns:ce="clr-namespace:SPC.Views.BaseView.CustomEditors"
+    xmlns:con="clr-namespace:SPC.Views.BaseView.Containers" xmlns:pullToRefresh="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms">
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2.1*"/>
+                <RowDefinition Height="11.7*"/>
+            </Grid.RowDefinitions>
+            <BoxView 
+                BackgroundColor="#1C384B"/>
+            <ImageButton 
+                Grid.Row="0" 
+                Source="https://doclinks.blob.core.windows.net/0303430876/documents/Left-Arrow-128_PTT_20200305172701.png" 
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                Command="{Binding Converter={StaticResource UrlCommand}, ConverterParameter='SPC.Dashboard?Code=E_APARTLIST'}"
+                BackgroundColor="#1C384B"/>
+            <buttons:SfButton 
+                Text="#_Translate('SubmitHandover')_#" 
+                TextColor="White"  
+                BackgroundColor="#1C384B" 
+                CornerRadius="10"
+                BorderWidth="2"
+                BorderColor="#00AFBC" 
+                Command="{Binding Converter={StaticResource UrlCommand}, ConverterParameter='SPC.BO.DashboardList?Code=SUCCESSSCREEN'}"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                FontAttributes="Bold"
+                Margin="0,0,10,0"/>
+            <Label
+                Grid.Row="0" Text="#_Translate('ApartmentNumber')_#" 
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                TextColor="White"  
+                FontAttributes="Bold" 
+                FontSize="Subtitle"/>
+            <StackLayout Grid.Row="1">
+                <db:SearchGadget
+                   ListName="LTask"
+                    Margin="0,0"
+                    HeightRequest="50"
+                    BackgroundColor="Transparent"
+                    Placeholder="Search..." />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="0.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Margin="5,0,0,0"
+                        Grid.Column="0" 
+                        Text="#_Translate('ChecklistNotes')_#"
+                        TextColor="#5A6978"
+                        FontAttributes="Bold"/>
+                    <CheckBox Grid.Column="1"/>
+                </Grid>
+                <Grid Grid.Row="2" VerticalOptions="Start">
+                    <ct:SExpander
+                                    x:Name="expander"
+                                    HeaderText="BOK"
+                                    AnimationEasing="SinOut"
+                                    AnimationDuration="650">
+                        <ct:SExpander.Content>
+                            <db:SListGadget x:Name="LTask" DataUrl="SPC.BO.RE.PEV">
+                                <db:SListGadget.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <ViewCell.View>
+                                                <StackLayout Spacing="0,20">
+                                                    <Frame Padding="4,0" HasShadow="True" CornerRadius="10">
+                                                        <Grid Padding="0,5" ColumnSpacing="0" RowSpacing="0">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="2*" />
+                                                                <ColumnDefinition Width="0.5*"/>
+                                                                <ColumnDefinition Width="0.5*" />
+                                                            </Grid.ColumnDefinitions>
+                                                            <Label 
+                                                    Grid.Row="0" 
+                                                    Text="#_Descriptn_#"
+                                                    TextColor="#47525E"
+                                                    FontSize="Body"/>
+                                                            <ImageButton 
+                                                    Grid.Column="1"
+                                                    Source="https://doclinks.blob.core.windows.net/0303430876/documents/Arrowhead-Right-01-128_PTT_20200228202411.png"
+                                                    BackgroundColor="White" />
+                                                            <ImageButton 
+                                                    Grid.Column="2"
+                                                    Source="https://doclinks.blob.core.windows.net/0303430876/documents/RED_PTT_20200328162115.png"
+                                                    BackgroundColor="White"/>
+                                                        </Grid>
+                                                    </Frame>
+                                                </StackLayout>
+                                            </ViewCell.View>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </db:SListGadget.ItemTemplate>
+                            </db:SListGadget>
+                        </ct:SExpander.Content>
+                    </ct:SExpander>
+
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,135 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="17.4.0.53" />
+    <PackageReference Include="Syncfusion.Xamarin.SfDataForm" Version="17.4.0.53" />
+    <PackageReference Include="Syncfusion.Xamarin.SfMaskedEdit" Version="17.4.0.53" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPicker" Version="17.4.0.55" />
+    <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Features\ApartmentList.xaml.cs">
+      <DependentUpon>ApartmentList.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Features\FailedScreen.xaml.cs">
+      <DependentUpon>FailedScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Features\ConfirmSchedule.xaml.cs">
+      <DependentUpon>ConfirmSchedule.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Features\BuyerInfo.xaml.cs">
+      <DependentUpon>BuyerInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Features\CHECKLIST.xaml.cs">
+      <DependentUpon>CheckList.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Features\Defect.xaml.cs">
+      <DependentUpon>Defect.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Features\EApartment.xaml.cs">
+      <DependentUpon>EApartment.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Features\Notification.xaml.cs">
+      <DependentUpon>Notification.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Features\EChecklist.xaml.cs">
+      <DependentUpon>EChecklist.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Features\RESCHEDULE.xaml.cs">
+      <DependentUpon>Reschedule.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Features\SuccessfulScreen.xaml.cs">
+      <DependentUpon>SuccessfulScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Login\EnterPhoneNo.xaml.cs">
+      <DependentUpon>EnterPhoneNo.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Login\EnterOTP.xaml.cs">
+      <DependentUpon>EnterOTP.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Login\ChangePw.xaml.cs">
+      <DependentUpon>ChangePw.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Login\UserProfile.xaml.cs">
+      <DependentUpon>UserProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Login\ResetPw.xaml.cs">
+      <DependentUpon>ResetPw.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Login\SignIn.xaml.cs">
+      <DependentUpon>SignIn.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Login\Welcome.xaml.cs">
+      <DependentUpon>Welcome.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Features\ApartmentList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\FailedScreen.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\ConfirmSchedule.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\Defect.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\EApartment.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\Notification.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\EChecklist.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\Reschedule.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\BuyerInfo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\CheckList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\SuccessfulScreen.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Login\EnterPhoneNo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Login\EnterOTP.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Login\ChangePw.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Login\UserProfile.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Login\ResetPw.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Login\SignIn.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Login\Welcome.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

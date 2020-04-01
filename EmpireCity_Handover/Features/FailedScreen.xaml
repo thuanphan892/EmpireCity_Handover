@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EmpireCity_Handover.Features.Page1">
+    <ContentPage.Content>
+        <Grid BackgroundColor="#1C384B">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <ImageButton Source="https://doclinks.blob.core.windows.net/0303430876/documents/Close-128_PTT_20200223190611.png" 
+                         VerticalOptions="Start" HorizontalOptions="Start" Margin="10"
+                         BackgroundColor="#1C384B"
+                         Command="{Binding Converter={StaticResource UrlCommand}, ConverterParameter='SPC.Dashboard?Code=SIGNIN'}"/>
+            <Image Grid.Row="1" Source="https://doclinks.blob.core.windows.net/0303430876/documents/EC_Logo_CMYK_Stacked2a_PTT_20200227101932.png" 
+                   VerticalOptions="Center"  
+                   HorizontalOptions="Center" />
+            <Label  Grid.Row="3" Text="#_Translate('FailedMessage1')_#" VerticalOptions="End" 
+                    HorizontalOptions="Center" TextColor="White" FontSize="Title" FontAttributes="Bold"/>
+            <Label  Grid.Row="4" Text="#_Translate('FailedMessage2')_#" 
+                    VerticalOptions="Start" HorizontalOptions="Center" TextColor="White" FontSize="Title" FontAttributes="Bold" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

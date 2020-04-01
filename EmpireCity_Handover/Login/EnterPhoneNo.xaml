@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EmpireCity_Handover.Login.Page1"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <StackLayout Padding="15,100,15,0">
+                <Label 
+                    Text="#_Translate('LiveinEmpireCity')_#" 
+                    TextColor="#00afbc" FontSize="Title" FontAttributes="Bold" 
+                    VerticalOptions="Start"
+                    HorizontalOptions="Start"/>
+                <Label 
+                    VerticalOptions="Start"
+                    HorizontalOptions="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="#_Translate('LoginwithEmpireCity')_#" 
+                                  TextColor="Black" FontSize="Subtitle"/>
+                            <Span Text=" Empire City" 
+                                  TextColor="Black" FontSize="Subtitle" 
+                                  FontAttributes="Bold"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  Width="20"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Margin="0,80,0,0" Source="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/2000px-Flag_of_Vietnam.svg.png" 
+                       WidthRequest="20" />
+                    <Entry Grid.Column="1" Margin="0,80,0,0" Placeholder="#_Translate('Enteryourphonenumber')_#" 
+                       VerticalOptions="FillAndExpand"  
+                       Keyboard="Telephone"/>
+                </Grid>
+                <buttons:SfButton Text="#_Translate('ButtonNext')_#" BackgroundColor="#DFE5ED" 
+                              Margin="0,120,0,0" BorderColor="#8492A6" BorderWidth="0" CornerRadius="10" 
+                              FontSize="Medium" TextColor="#1C384B" FontAttributes="Bold"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
