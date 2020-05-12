@@ -1,15 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="EmpireCity_Handover.Features.Page1">
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:db="clr-namespace:SPC.Views.Dashboard"
+    xmlns:ct="clr-namespace:SPC.Views.BaseView.Containers"
+xmlns:ce="clr-namespace:SPC.Views.BaseView.CustomEditors"
+    xmlns:con="clr-namespace:SPC.Views.BaseView.Containers" xmlns:pullToRefresh="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Notifications"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2.1*"/>
+                <RowDefinition Height="11.7*"/>
+            </Grid.RowDefinitions>
+            <BoxView 
+                BackgroundColor="#1C384B"/>
+            <ImageButton 
+                Grid.Row="0" 
+                Source="https://doclinks.blob.core.windows.net/0303430876/documents/Left-Arrow-128_PTT_20200305172701.png" 
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                Command="{Binding Converter={StaticResource UrlCommand}, ConverterParameter='SPC.Dashboard?Code=APARTMENTLIST'}"
+                BackgroundColor="#1C384B"/>
+            
+            <Label
+                Grid.Row="0" Text="#_Translate('Notifications')_#" 
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                TextColor="White"  
+                FontAttributes="Bold"
+                FontSize="Subtitle"/>
+            <StackLayout Grid.Row="1">
+                
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
